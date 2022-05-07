@@ -167,7 +167,7 @@ func (d *Decoder) decRef(flag int32) (interface{}, error) {
 			return nil, err
 		}
 
-		if len(d.refs) <= int(i) {
+		if i < 0 || len(d.refs) <= int(i) {
 			return nil, nil
 			// return nil, ErrIllegalRefIndex
 		}
